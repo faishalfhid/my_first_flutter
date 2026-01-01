@@ -17,11 +17,16 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
-        body: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) => KotakWarna(
-            text: "Kota ke - ${index + 1}",
-            warna: Color.fromARGB(
+        body: GridView.builder(
+          itemCount: 20,
+          padding: EdgeInsets.all(10),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 5,
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+          ),
+          itemBuilder: (context, index) => Container(
+            color: Color.fromARGB(
               255,
               150 + Random().nextInt(200),
               150 + Random().nextInt(200),
