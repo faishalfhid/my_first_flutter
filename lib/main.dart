@@ -8,17 +8,25 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  List<KotakWarna> allItems = List.generate(
+  // List<KotakWarna> allItems = List.generate(
+  //   10,
+  //   (index) => KotakWarna(
+  //     text: "Kotak-${index + 1}",
+  //     warna:
+  //   ),
+  // );
+
+  List<Map<String, dynamic>> data = List.generate(
     10,
-    (index) => KotakWarna(
-      text: "Kotak-${index + 1}",
-      warna: Color.fromARGB(
+    (index) => {
+      "text": "Kotak - ${index + 1}",
+      "color": Color.fromARGB(
         255,
         200 + Random().nextInt(256),
         200 + Random().nextInt(256),
         200 + Random().nextInt(256),
       ),
-    ),
+    },
   );
 
   @override
@@ -32,7 +40,11 @@ class MyApp extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Column(children: allItems),
+          child: Column(
+            children: data
+                .map((e) => KotakWarna(text: e["text"], warna: e["color"]))
+                .toList(),
+          ),
         ),
       ),
     );
