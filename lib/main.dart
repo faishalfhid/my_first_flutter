@@ -19,66 +19,65 @@ class MyApp extends StatelessWidget {
         // Row untuk arah horizontal
         // Stack menumpuk
         // SingleChildScroolView -> Agar bisa discroll
-        body: SingleChildScrollView(
+        // listview -> gabungan antara column, row, dan singlechildscroolview
+        body: ListView(
           scrollDirection: Axis.horizontal, // Untuk mengatur arah scroll
-          child: Row(
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.amber,
-                child: Center(child: Text("Container 1")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.green,
-                child: Center(child: Text("Container 2")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Center(child: Text("Container 3")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.amber,
-                child: Center(child: Text("Container 1")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.green,
-                child: Center(child: Text("Container 2")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Center(child: Text("Container 3")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.amber,
-                child: Center(child: Text("Container 1")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.green,
-                child: Center(child: Text("Container 2")),
-              ),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Center(child: Text("Container 3")),
-              ),
-            ],
-          ),
+          children: [
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.amber,
+              child: Center(child: Text("Container 1")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: Center(child: Text("Container 2")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              child: Center(child: Text("Container 3")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+              child: Center(child: Text("Container 1")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: Center(child: Text("Container 2")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              child: Center(child: Text("Container 3")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.amber,
+              child: Center(child: Text("Container 1")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+              child: Center(child: Text("Container 2")),
+            ),
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              child: Center(child: Text("Container 3")),
+            ),
+          ],
         ),
       ),
     );
