@@ -20,63 +20,17 @@ class MyApp extends StatelessWidget {
         // Stack menumpuk
         // SingleChildScroolView -> Agar bisa discroll
         // listview -> gabungan antara column, row, dan singlechildscroolview
-        body: ListView(
-          scrollDirection: Axis.horizontal, // Untuk mengatur arah scroll
+        // MainAxisAlignment -> mengatur alignment layout: start, center, end, spacearround, spacebetween
+        // CrossAxisAlignment -> kebalikan dari main (90 derajat dari main axis)
+        // GridView -> mengatur
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.amber,
-              child: Center(child: Text("Container 1")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Container 2")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              child: Center(child: Text("Container 3")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-              child: Center(child: Text("Container 1")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Container 2")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              child: Center(child: Text("Container 3")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.amber,
-              child: Center(child: Text("Container 1")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.green,
-              child: Center(child: Text("Container 2")),
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
-              child: Center(child: Text("Container 3")),
-            ),
+            Container(width: 50, height: 100, color: Colors.red),
+            Container(width: 80, height: 100, color: Colors.yellow),
+            Container(width: 100, height: 100, color: Colors.green),
+            Container(width: 120, height: 100, color: Colors.blue),
           ],
         ),
       ),
