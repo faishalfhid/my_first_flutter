@@ -22,15 +22,25 @@ class MyApp extends StatelessWidget {
         // listview -> gabungan antara column, row, dan singlechildscroolview
         // MainAxisAlignment -> mengatur alignment layout: start, center, end, spacearround, spacebetween
         // CrossAxisAlignment -> kebalikan dari main (90 derajat dari main axis)
-        // GridView -> mengatur
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        // GridView -> mengatur layout seperti grid instagram
+        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount -> Membagi rata grid dengan tinggi dan lebar sama rata berdasarkan angka count
+        // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent -> Membagi rata grid berdasarkan ukuran maximum
+        // mainAxisSpacing & crossAxisSpacing -> seperti padding tapi berdasarkan main/cross axis
+        // padding: EdgeInsets.only -> mengatur padding satu2
+        // padding: EdgeInsets.all -> mengatur padding langsung semua
+        body: GridView(
+          padding: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            childAspectRatio: 1 / 2,
+          ),
           children: [
-            Container(width: 50, height: 100, color: Colors.red),
-            Container(width: 80, height: 100, color: Colors.yellow),
-            Container(width: 100, height: 100, color: Colors.green),
-            Container(width: 120, height: 100, color: Colors.blue),
+            Container(color: Colors.red),
+            Container(color: Colors.yellow),
+            Container(color: Colors.green),
+            Container(color: Colors.blue),
           ],
         ),
       ),
