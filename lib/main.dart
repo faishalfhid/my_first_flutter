@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'widgets/KotakWarna.dart';
 
@@ -6,7 +8,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  List<KotakWarna> allItems = List.generate(
+    10,
+    (index) => KotakWarna(
+      text: "Kotak-${index + 1}",
+      warna: Color.fromARGB(
+        255,
+        200 + Random().nextInt(256),
+        200 + Random().nextInt(256),
+        200 + Random().nextInt(256),
+      ),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -17,27 +30,9 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
         ),
-        body: Column(
-          children: [
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-            KotakWarna(text: "merah", warna: Colors.red),
-            KotakWarna(text: "hijau", warna: Colors.green),
-            KotakWarna(text: "blue", warna: Colors.blue),
-          ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(children: allItems),
         ),
       ),
     );
