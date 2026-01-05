@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './widgets/HPdialog.dart';
+import './widgets/HPSnackBar.dart';
 
 void main() {
   runApp(MyApp());
